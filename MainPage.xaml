@@ -9,7 +9,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <Button Content="Selected Clip" Click="Select_OnClick" Height="76" Margin="180,156,0,0" VerticalAlignment="Top" Width="374"/>
+        <Button Content="Select Clips" Click="Select_OnClick" Height="76" Margin="180,156,0,0" VerticalAlignment="Top" Width="374"/>
         <Button Content="Merge" Click="Merge_OnClick" Height="86" Margin="180,308,0,0" VerticalAlignment="Top" Width="374"/>
         <TextBlock Name="TextBlock" HorizontalAlignment="Left" Height="138" Margin="721,194,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="388"/>
     </Grid>

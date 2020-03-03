@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using Windows.Media.Editing;
 using Windows.Storage.Pickers;
@@ -32,6 +33,8 @@ namespace FileMerger
 
             if (pickedFiles == null) return;
 
+            TextBlock.Text = $"Importing {pickedFiles.Count} files";
+
             composition = new MediaComposition();
             var files = pickedFiles.OrderBy(x => x.Name).ToArray();
 
@@ -39,7 +42,10 @@ namespace FileMerger
             {
                 var clip = await MediaClip.CreateFromFileAsync(file);
                 composition.Clips.Add(clip);
+                TextBlock.Text = $"Importing {Path.GetFileName(file.Path)}";
             }
+
+            TextBlock.Text = $"All files are imported";
         }
 
         private async void Merge_OnClick(object sender, RoutedEventArgs e)
